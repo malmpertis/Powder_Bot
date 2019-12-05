@@ -17,18 +17,19 @@ client.on('ready', ()=>{
   })
 })
 
-client.login(process.env.DISCORD_BOT_TOKEN);
-
 client.on('message', async (msg) => {
   if(msg.author.username !== 'PowderBot') {
     switch(msg.toString()) {
       case 'weather':
-        getWeather().then(response => msg.reply(response))
+        const response = await getWeather();
+        return msg.reply(response);
       default:
         msg.reply('gamiesai');
     }
   }
 })
+
+client.login(process.env.DISCORD_BOT_TOKEN);
 
 const getWeather = async () => {
   try {
