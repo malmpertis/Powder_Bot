@@ -1,7 +1,7 @@
 {
   "name": "poder_bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple discord bot using discord.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
