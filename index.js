@@ -24,7 +24,7 @@ client.on('message', async (msg) => {
         const response = await getWeather();
         return msg.reply(response);
       default:
-        msg.reply('gamiesai');
+        return msg.reply('gamiesai');
     }
   }
 })
