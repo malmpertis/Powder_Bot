@@ -42,7 +42,7 @@ client.login(process.env.DISCORD_BOT_TOKEN);
 const getWeather = async (city) => {
   if(!city) return `Please write a city name`
   try {
-    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city.toLowerCase()},gr&APPID=${process.env.OPENWEATHER_TOKEN}`);
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city.toLowerCase()}&APPID=${process.env.OPENWEATHER_TOKEN}`);
     const data = await res.json();
     console.log(data);
     return `The weather in ${city} is ${data.weather[0].description} and the temperature is ${(data.main.temp - 272.15).toFixed(2)} °C`
